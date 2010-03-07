@@ -1,12 +1,24 @@
 
-var sys = require("sys");
-var YQL = require('./yql');
+var	sys = require("sys"),
+	YQL = require('./yql');
 
-YQL.get("SELECT * FROM weather.forecast WHERE location=90066", function(response) {
+var zip	= 90066;
+
+YQL.exec("SELECT * FROM weather.forecast WHERE location=" + zip, function(response, error) {
+
+	if (!error) {
 	
-	var	location 	= response.query.results.channel.location,
-		condition 	= response.query.results.channel.item.condition;
+		var	location 	= response.query.results.channel.location,
+			condition 	= response.query.results.channel.item.condition;
+
+		sys.puts("The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
 	
-	sys.puts("The current temperature in " + location.city + " is " + condition.temp + " degrees");
+	} else {
 	
+		sys.puts("Error: " + error);
+	
+	}
+
 });
+
+sys.puts("Fetching weather...");

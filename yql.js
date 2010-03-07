@@ -1,11 +1,11 @@
-
-var http = require("http");
-
-exports.get = function(yql, callback){
+exports.exec = function(yql, callback){
 	
-	var client 	= http.createClient(80, "query.yahooapis.com");
-	var url 	= "http://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json";
-	var request = client.request("GET", url, {"host": "query.yahooapis.com", "User-Agent": "NodeJS HTTP Client"});
+	var http 	= require("http");
+	
+	var url		= "http://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json";
+	
+	var client	= http.createClient(80, "query.yahooapis.com");
+	var request	= client.request("GET", url, {"host": "query.yahooapis.com", "User-Agent": "NodeJS HTTP Client"});
 
 	request.addListener('response', function (response) {
 
@@ -16,11 +16,16 @@ exports.get = function(yql, callback){
 		});
 
 		response.addListener("end", function () {
-			callback(JSON.parse(responseBody));
+			var r = JSON.parse(responseBody);
+			if (r.error) {
+				callback(r, r.error.description);
+			} else {
+				callback(r, false);
+			}
 		});
 
 	});
 
 	request.close();
-
+	
 }
