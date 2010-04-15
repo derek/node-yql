@@ -2,7 +2,7 @@ exports.exec = function(yql, callback){
 	
 	var http 	= require("http");
 	
-	var url		= "http://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json";
+	var url		= "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json";
 	
 	var client	= http.createClient(80, "query.yahooapis.com");
 	var request	= client.request("GET", url, {"host": "query.yahooapis.com", "User-Agent": "NodeJS HTTP Client"});
