@@ -26,6 +26,6 @@ exports.exec = function(yql, callback){
 
 	});
 
-	request.close();
+	request.end();
 	
 }
