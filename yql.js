@@ -1,7 +1,7 @@
-exports.exec = function(yql, callback){
+exports.exec = function(yql, callback, secure){
 	
 	var http 	= require("http");
-	
+	var secure  = secure ? "https://" : "http://";
 	var url		= "https://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json";
 	
 	var client	= http.createClient(80, "query.yahooapis.com");
