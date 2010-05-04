@@ -1,20 +1,26 @@
-exports.exec = function(yql, callback, secure){
+exports.exec = function (yql, callback, secure) {
 	
-	var http 	= require("http");
-	var schema  = secure ? "https://" : "http://";
-	var url		= schema + "query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json";
+	var	client, host, http, request;
 	
-	var client	= http.createClient(80, "query.yahooapis.com");
-	var request	= client.request("GET", url, {"host": "query.yahooapis.com", "User-Agent": "NodeJS HTTP Client"});
+	http = require("http");
+	
+	host = "query.yahooapis.com";
+	client = http.createClient(80, host);
+	request	= client.request(
+		"GET",
+		"http" + (secure ? "s" : "") + "://" + host + "/v1/public/yql?q=" + encodeURIComponent(yql) + "&format=json",
+		{"host": host, "User-Agent": "A Node.js HTTP client"}
+	);
 
 	request.addListener('response', function (response) {
-
 		var responseBody = '';
-
+		
+		response.setBodyEncoding("utf8");
+		
 		response.addListener("data", function (chunk) {	
 			responseBody += chunk;
 		});
-
+		
 		response.addListener("end", function () {
 			var r = JSON.parse(responseBody);
 			if (r.error) {
@@ -23,9 +29,8 @@ exports.exec = function(yql, callback, secure){
 				callback(r, false);
 			}
 		});
-
 	});
 
 	request.end();
-	
-}
+
+};
