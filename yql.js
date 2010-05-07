@@ -4,7 +4,7 @@ exports.exec = function (yql, callback, params, opts) {
 		sys = require("sys"),
 		params = params || {},
 		opts = opts || {},
-		scheme = "http" + (typeof opts.https !== "undefined" &&  opts.https.toString() === "true" ? "s" : ""),
+		scheme = "http" + (typeof opts.https !== "undefined" && opts.https.toString() === "true" ? "s" : ""),
 		host = "query.yahooapis.com",
 		port = 80,
 		path = "/v1/public/yql",
@@ -27,7 +27,7 @@ exports.exec = function (yql, callback, params, opts) {
 	url = scheme + "://" + host + path + queryString;
 	
 	// Create the HTTP Client, and make the request
-	client = http.createClient(port, host); // TODO: If neccesary, use 3rd param here for https instead of passing in the full URL to client.request
+	client = http.createClient(port, host); // TODO: If https, use 3rd param here instead of passing in the full URL to client.request
 	request	= client.request("GET", url, {"host": host, "User-Agent": "A Node.js HTTP client"});
 
 	// Handle the response
