@@ -1,9 +1,10 @@
 exports.exec = function (yql, callback, params, opts) {
 	
-	var	http = require("http"), sys = require("sys"),
+	var	http = require("http"), 
+		sys = require("sys"),
 		params = params || {},
 		opts = opts || {},
-		scheme = "http" + (typeof opts.https != "undefined" &&  opts.https.toString() == "true" ? "s" : ""),
+		scheme = "http" + (typeof opts.https !== "undefined" &&  opts.https.toString() === "true" ? "s" : ""),
 		host = "query.yahooapis.com",
 		port = 80,
 		path = "/v1/public/yql",
@@ -12,13 +13,13 @@ exports.exec = function (yql, callback, params, opts) {
 
 	// Attach some paramaters
 	params.format = 'json';
-	params.q = yql
+	params.q = yql;
 	if (!params.env) {
-		params.env = 'http:/'+'/datatables.org/alltables.env';
+		params.env = 'http:/' + '/datatables.org/alltables.env';
 	}
 	
 	// Construct the query string
-	for(var key in params) {
+	for (var key in params) {
 		queryString += key + "=" + encodeURIComponent(params[key]) + "&";
 	}
 	
@@ -26,12 +27,8 @@ exports.exec = function (yql, callback, params, opts) {
 	url = scheme + "://" + host + path + queryString;
 	
 	// Create the HTTP Client, and make the request
-	client = http.createClient(port, host);
-	request	= client.request(
-		"GET",
-		url,
-		{"host": host, "User-Agent": "A Node.js HTTP client"}
-	);
+	client = http.createClient(port, host); // TODO: If neccesary, use 3rd param here for https instead of passing in the full URL to client.request
+	request	= client.request("GET", url, {"host": host, "User-Agent": "A Node.js HTTP client"});
 
 	// Handle the response
 	request.addListener('response', function (response) {
