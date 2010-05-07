@@ -41,11 +41,7 @@ exports.exec = function (yql, callback, params, opts) {
 			var jsonString = chunks.join(''),
 				result = JSON.parse(jsonString);
 				
-			if (result.error) {
-				callback(result, result.error.description);
-			} else {
-				callback(result, false);
-			}
+			callback(result);
 		});
 		
 	});
