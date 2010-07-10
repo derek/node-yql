@@ -48,7 +48,7 @@ YQL.exec()
 
 *yql.js* exports a single method, *exec*.
 
-*exec* receives 4 parameters, (*string* __query__ [, *function* __callback__] [, *object* __params__] [, *object* __options__])
+function *exec* (*string* __query__ [, *function* __callback__] [, *object* __params__] [, *object* __options__])
 
 * query - A YQL query
 * callback - A callback function that receives the result of the query
