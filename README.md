@@ -52,8 +52,8 @@ YQL.exec()
 
 * query - A YQL query
 * callback - A callback function that receives the result of the query
-* params - Optional parameters for use within the requests querystring. Typical uses include environment files & variables within the YQL statement.
-* opts - Optional parameters 
+* params - Optional parameters for use within the YQL request querystring. Typical uses; including environment files, variable replacement within the YQL statement.
+* opts - Options for use within *exec* 
 	* https: A boolean true/false to turn on/off HTTPS (default: false)
 	* userAgent: A user-agent string (default: *null*)
 
