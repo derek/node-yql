@@ -61,5 +61,5 @@ YQL.exec()
 Additional YQL Resources
 ------------------------
 
-Documentation: <http://developer.yahoo.com/yql/guide/>
-Console: <http://developer.yahoo.com/yql/console/>
+* Documentation: <http://developer.yahoo.com/yql/guide/>
+* Console: <http://developer.yahoo.com/yql/console/>
