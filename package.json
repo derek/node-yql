@@ -6,7 +6,6 @@
 , "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>"]
 , "version" : "0.2.0"
 , "keywords" : ["yql"]
-, "dependencies" : []
 , "main" : "./lib/yql"
 , "repository" :
   { "type" : "git"
