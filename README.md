@@ -56,3 +56,10 @@ YQL.exec()
 * opts - Optional parameters 
 	* https: A boolean true/false to turn on/off HTTPS (default: false)
 	* userAgent: A user-agent string (default: *null*)
+
+
+Additional YQL Resources
+------------------------
+
+Documentation: <http://developer.yahoo.com/yql/guide/>
+Console: <http://developer.yahoo.com/yql/console/>
