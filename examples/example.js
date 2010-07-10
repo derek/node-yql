@@ -10,8 +10,34 @@ new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(
 	else {
 		var	location 	= response.query.results.channel.location,
 			condition 	= response.query.results.channel.item.condition;
-		sys.puts("The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
+		sys.puts("Test #1... " + "The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
 	}
 
 }, {"zip": 90066});
 
+
+// Test #2
+new YQL.exec("SELECT * FROM foobar.badTable WHERE (location = 66213)", function(response) {
+
+	if (response.error) {
+		sys.puts("Test #2... " + "Error: " + response.error.description);
+	} 
+	else {
+		// Intentionally blank
+	}
+
+}, {}, {foo: "bar"});
+
+
+// Test #3
+new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(response) {
+
+	if (response.error) {
+		sys.puts("Test #3... Error: " + response.error.description);
+	} 
+	else {
+		var tweets = response.query.results.statuses.status;
+		sys.puts("Test #3... Latest tweet from @" + tweets[0].user.screen_name + ": " + tweets[0].text);
+	}
+
+}, {id:"derek"}, {https:true});
