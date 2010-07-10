@@ -42,6 +42,7 @@ A basic example
 
 ![](http://s89997654.onlinehome.us/screencaps/untitled-20100710-152802.jpg)
 ![](http://s89997654.onlinehome.us/screencaps/Default-20100710-155652.jpg)
+
 *yql.js* exports a YQL object with 1 method, *exec*.
 
 *exec* receives 4 parameters, (*string* __yql__ [, *function* __callback__] [, *object* __params__] [, *object* __opttions__])
