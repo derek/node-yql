@@ -1,0 +1,17 @@
+{ 
+  "name" : "yql"
+, "description" : "A YQL module"
+, "url" : "http://github.com/drgath/node-yql"
+, "author" : "Derek Gathright <drg@yahoo-inc.com>"
+, "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>"]
+, "version" : "0.2.0"
+, "keywords" : ["yql"]
+, "dependencies" : []
+, "main" : "./lib/yql"
+, "repository" :
+  { "type" : "git"
+  , "url" : "http://github.com/drgath/node-yql.git"
+  }
+, "directories" : { "lib" : "./lib/" }
+, "engines" : { "node" : ">=0.1.100" }
+}
