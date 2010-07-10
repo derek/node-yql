@@ -31,7 +31,7 @@ With Node installed, you can install the node-yql module 2 ways:
 
 	$ git clone http://github.com/drgath/node-yql.git
 
-2) The easier method is to use [NPM](http://github.com/isaacs/npm), node's package manager.
+2) The easier method is to use [NPM](http://github.com/isaacs/npm), node's package manager.  Once you have NPM installed, simply run:
 
 	$ npm install yql
 
