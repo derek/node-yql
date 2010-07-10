@@ -34,3 +34,21 @@ With Node installed, you can install the node-yql module 2 ways:
 2) The easier method is to use [NPM](http://github.com/isaacs/npm), node's package manager.
 
 	$ npm install yql
+
+Use within Node
+---------------
+
+A basic example
+
+![](http://s89997654.onlinehome.us/screencaps/untitled-20100710-152802.jpg)
+
+*yql.js* exports a YQL object with 1 method, *exec*.
+
+*exec* receives 4 parameters, (*string* __yql__ [, *function* __callback__] [, *object* __params__] [, *object* __opttions__])
+
+* yql - A YQL query
+* callback - A callback function that receives the result of the query
+* params - Optional parameters for use within the requests querystring. Typical uses include environment files & variables within the YQL statement.
+* opts - Optional parameters 
+	* https: A boolean true/false to turn on/off HTTPS (default: false)
+	* userAgent: A user-agent string (default: *null*)
