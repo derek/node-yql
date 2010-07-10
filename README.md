@@ -40,14 +40,17 @@ Use within Node
 
 A basic example
 
-![](http://s89997654.onlinehome.us/screencaps/untitled-20100710-152802.jpg)
+![](http://s89997654.onlinehome.us/screencaps/untitled-20100710-160828.jpg)
 ![](http://s89997654.onlinehome.us/screencaps/Default-20100710-160425.jpg)
 
-*yql.js* exports a YQL object with 1 method, *exec*.
+YQL.exec()
+----------
 
-*exec* receives 4 parameters, (*string* __yql__ [, *function* __callback__] [, *object* __params__] [, *object* __opttions__])
+*yql.js* exports a single method, *exec*.
 
-* yql - A YQL query
+*exec* receives 4 parameters, (*string* __query__ [, *function* __callback__] [, *object* __params__] [, *object* __options__])
+
+* query - A YQL query
 * callback - A callback function that receives the result of the query
 * params - Optional parameters for use within the requests querystring. Typical uses include environment files & variables within the YQL statement.
 * opts - Optional parameters 
