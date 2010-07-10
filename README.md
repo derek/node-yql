@@ -41,7 +41,7 @@ Use within Node
 A basic example
 
 ![](http://s89997654.onlinehome.us/screencaps/untitled-20100710-152802.jpg)
-![](http://s89997654.onlinehome.us/screencaps/Default-20100710-155652.jpg)
+![](http://s89997654.onlinehome.us/screencaps/Default-20100710-160425.jpg)
 
 *yql.js* exports a YQL object with 1 method, *exec*.
 
