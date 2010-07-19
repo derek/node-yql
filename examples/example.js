@@ -1,26 +1,36 @@
+/*
+
+Software Copyright License Agreement (BSD License)
+
+Copyright (c) 2010, Yahoo! Inc.
+All rights reserved.
+
+*/
+
 var	sys = require("sys"),
 	YQL = require('yql');
 
-// Test #1
+
+// Example #1
 new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(response) {
 
 	if (response.error) {
-		sys.puts("Error: " + response.error.description);
+		sys.puts("Example #1... Error: " + response.error.description);
 	} 
 	else {
 		var	location 	= response.query.results.channel.location,
 			condition 	= response.query.results.channel.item.condition;
-		sys.puts("Test #1... " + "The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
+		sys.puts("Example #1... " + "The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
 	}
 
 }, {"zip": 90066});
 
 
-// Test #2
+// Example #2
 new YQL.exec("SELECT * FROM foobar.badTable WHERE (location = 66213)", function(response) {
 
 	if (response.error) {
-		sys.puts("Test #2... " + "Error: " + response.error.description);
+		sys.puts("Example #2... " + "Error: " + response.error.description);
 	} 
 	else {
 		// Intentionally blank
@@ -29,15 +39,15 @@ new YQL.exec("SELECT * FROM foobar.badTable WHERE (location = 66213)", function(
 }, {}, {foo: "bar"});
 
 
-// Test #3
+// Example #3
 new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(response) {
 
 	if (response.error) {
-		sys.puts("Test #3... Error: " + response.error.description);
+		sys.puts("Example #3... Error: " + response.error.description);
 	} 
 	else {
 		var tweets = response.query.results.statuses.status;
-		sys.puts("Test #3... Latest tweet from @" + tweets[0].user.screen_name + ": " + tweets[0].text);
+		sys.puts("Example #3... Latest tweet from @" + tweets[0].user.screen_name + ": " + tweets[0].text);
 	}
 
 }, {id:"derek"}, {https:true});
