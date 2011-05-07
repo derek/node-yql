@@ -52,13 +52,13 @@ YQL.exec()
 
 *yql.js* exports a single method, *exec*.
 
-function *exec* (*string* __query__ [, *function* __callback__] [, *object* __params__] [, *object* __options__])
+function *exec* (*string* __query__ [, *function* __callback__] [, *object* __params__] [, *object* __httpOptions__])
 
 * query - A YQL query
 * callback - A callback function that receives the result of the query
 * params - Optional parameters for use within the YQL request querystring. Typical uses; including environment files, variable replacement within the YQL statement.
-* httpOpts - Additional HTTP options
-	* ssl: A boolean true/false to turn on/off HTTPS (default: false)
+* httpOptions - Additional HTTP options
+	* ssl: A boolean true/false flag to enable HTTPS (default: false)
 	* Any valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields)
 
 

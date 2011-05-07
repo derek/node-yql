@@ -41,7 +41,7 @@ new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(re
 
 
 // Example #3
-new YQL.exec("SELECT * FROM foobar.badTable WHERE (location = 66213)", function(response) {
+new YQL.exec("SELECT * FROM foobar.badTable", function(response) {
 
 	if (response.error) {
 		console.log("Example #3... Error: " + response.error.description);
@@ -50,4 +50,4 @@ new YQL.exec("SELECT * FROM foobar.badTable WHERE (location = 66213)", function(
 		// Intentionally blank
 	}
 	
-}, false, {foo: "bar"});
+});
