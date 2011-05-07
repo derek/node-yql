@@ -4,7 +4,7 @@
 , "url" : "http://github.com/drgath/node-yql"
 , "author" : "Derek Gathright <drg@yahoo-inc.com>"
 , "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>"]
-, "version" : "0.2.0"
+, "version" : "0.3.0"
 , "keywords" : ["yql"]
 , "main" : "./lib/yql"
 , "repository" :
@@ -12,5 +12,5 @@
   , "url" : "http://github.com/drgath/node-yql.git"
   }
 , "directories" : { "lib" : "./lib/" }
-, "engines" : { "node" : ">=0.1.100" }
+, "engines" : { "node" : ">=0.4.700" }
 }
