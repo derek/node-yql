@@ -12,5 +12,5 @@
   , "url" : "http://github.com/drgath/node-yql.git"
   }
 , "directories" : { "lib" : "./lib/" }
-, "engines" : { ">=npm":"1.0.0","node":">=v0.4.0" }
+, "engines" : { ">=npm":"1.0.0","node":">=v0.4.4" }
 }
