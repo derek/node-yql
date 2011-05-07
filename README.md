@@ -33,7 +33,7 @@ With Node installed, you can install the node-yql module 2 ways:
 
 	$ npm install yql
 
-2) Or, you can clone the github repository, and just be sure you add the local path to the $NODE_PATH env variable
+2) Or, you can clone the github repository, and just be sure you add this module's path to the $NODE_PATH env variable
 
 	$ git clone http://github.com/drgath/node-yql.git
 
@@ -59,11 +59,11 @@ function *exec* (*string* __query__ [, *function* __callback__] [, *object* __pa
 * params - Optional parameters for use within the YQL request querystring. Typical uses; including environment files, variable replacement within the YQL statement.
 * httpOptions - Additional HTTP options
 	* ssl: A boolean true/false flag to enable HTTPS (default: false)
-	* Any valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields)
+	* Any valid [HTTP header](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields)
 
 
 Additional YQL Resources
 ------------------------
 
 * Documentation: <http://developer.yahoo.com/yql/guide/>
-* Console: <http://developer.yahoo.com/yql/console/>
+* YQL Console: <http://developer.yahoo.com/yql/console/>
