@@ -1,16 +1,15 @@
-{ 
-  "name" : "yql"
-, "description" : "A YQL module"
-, "url" : "http://github.com/drgath/node-yql"
-, "author" : "Derek Gathright <drg@yahoo-inc.com>"
-, "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>"]
-, "version" : "0.3.0"
-, "keywords" : ["yql"]
-, "main" : "./lib/yql"
-, "repository" :
-  { "type" : "git"
-  , "url" : "http://github.com/drgath/node-yql.git"
-  }
-, "directories" : { "lib" : "./lib/" }
-, "engines" : { ">=npm":"1.0.0","node":">=v0.4.4" }
-}
+{ "name"         : "yql"
+, "version"      : "0.4.0"
+, "engines"      : { ">=npm":"1.0.0", "node":">=v0.4.4" }
+, "author"       : "Derek Gathright <drg@yahoo-inc.com>"
+, "script"       : ""
+, "main"         : "./lib/yql"
+, "directories"  : { "lib" : "./lib/" }
+, "description"  : "A YQL (Yahoo Query Language) client"
+, "url"          : "http://github.com/drgath/node-yql"
+, "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>" ]
+, "keywords"     : [ "yql" ]
+, "repository"   : { "type" : "git", "url" : "http://github.com/drgath/node-yql.git" }
+, "bugs"         : { "mail" : "drg@yahoo-inc.com", "web": "https://github.com/drgath/node-yql/issues" }
+, "licenses"     : [ { "type": "BSD", "url": "https://github.com/drgath/node-yql/raw/master/LICENSE.txt" } ]
+, "dependencies" : { "request" : ">=1.9.5" }}
