@@ -7,8 +7,7 @@ All rights reserved.
 
 */
 
-var sys = require('sys'),
-    YQL = require('yql');
+var YQL = require('yql');
 
 // Example #1
 new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(response) {

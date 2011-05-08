@@ -43,7 +43,7 @@ Use within Node
 
 A basic example
 
-![](http://s89997654.onlinehome.us/screencaps/untitled-20100710-160828.jpg)
+![](http://s89997654.onlinehome.us/screencaps/example.js-20110507-181302.jpg)
 ![](http://s89997654.onlinehome.us/screencaps/Default-20100710-160425.jpg)
 
 
