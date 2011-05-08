@@ -17,8 +17,8 @@ new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(
 		console.log("Example #1... Error: " + response.error.description);
 	} 
 	else {
-		var	location  = response.query.results.channel.location,
-			condition = response.query.results.channel.item.condition;
+		var location  = response.query.results.channel.location,
+		    condition = response.query.results.channel.item.condition;
 		console.log("Example #1... The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
 	}
 
@@ -29,8 +29,8 @@ new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(
 new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(response) {
 
 	if (response.error) {
-	    console.log(require('util').inspect(error));
-		console.log("Example #2... Error: " + response.error.description);
+        console.log(require('util').inspect(error));
+        console.log("Example #2... Error: " + response.error.description);
 	} 
 	else {
 		var tweets = response.query.results.statuses.status;
@@ -44,10 +44,10 @@ new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(re
 new YQL.exec("SELECT * FROM foobar.badTable", function(response) {
 
 	if (response.error) {
-		console.log("Example #3... Error: " + response.error.description);
+        console.log("Example #3... Error: " + response.error.description);
 	} 
 	else {
 		// Intentionally blank
 	}
-	
+
 });
