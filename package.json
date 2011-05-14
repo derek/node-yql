@@ -1,5 +1,5 @@
 { "name"         : "yql"
-, "version"      : "0.4.1"
+, "version"      : "0.4.2"
 , "engines"      : { ">=npm":"1.0.0", "node":">=v0.4.4" }
 , "maintainers"  : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
 , "scripts"      : { "test": "test.js" }
