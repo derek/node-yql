@@ -1,15 +1,15 @@
 { "name"         : "yql"
 , "version"      : "0.4.1"
 , "engines"      : { ">=npm":"1.0.0", "node":">=v0.4.4" }
-, "author"       : "Derek Gathright <drg@yahoo-inc.com>"
-, "script"       : ""
+, "maintainers"  : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
+, "scripts"      : { "test": "test.js" }
 , "main"         : "./lib/yql"
 , "directories"  : { "lib" : "./lib/" }
 , "description"  : "A YQL (Yahoo Query Language) client"
 , "url"          : "http://github.com/drgath/node-yql"
 , "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>" ]
 , "keywords"     : [ "yql" ]
-, "repository"   : { "type" : "git", "url" : "http://github.com/drgath/node-yql.git" }
+, "repositories" : [ {"type" : "git", "url" : "http://github.com/drgath/node-yql.git" } ]
 , "bugs"         : { "mail" : "drg@yahoo-inc.com", "web": "https://github.com/drgath/node-yql/issues" }
 , "licenses"     : [ { "type": "BSD", "url": "https://github.com/drgath/node-yql/raw/master/LICENSE" } ]
 , "dependencies" : { "request" : ">=1.9.5" }}
