@@ -9,7 +9,7 @@ All rights reserved.
 
 var YQL = require('yql');
 
-// Example #1
+// Example #1 - Param binding
 new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(response) {
 
 	if (response.error) {
@@ -24,7 +24,7 @@ new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(
 }, {"zip": 90066});
 
 
-// Example #2
+// Example #2 - Param binding + SSL
 new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(response) {
 
     if (response.error) {
@@ -37,16 +37,3 @@ new YQL.exec("select * from twitter.user.timeline where (id = @id)", function(re
     }
 
 }, {id:"derek"}, {ssl:true});
-
-
-// Example #3
-new YQL.exec("SELECT * FROM foobar.badTable", function(response) {
-
-    if (response.error) {
-        console.log("Example #3... Error: " + response.error.description);
-    } 
-    else {
-        // Intentionally blank
-    }
-
-});
