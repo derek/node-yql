@@ -21,7 +21,7 @@ new YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(
         console.log("Example #1... The current weather in " + location.city + ', ' + location.region + " is " + condition.temp + " degrees and " + condition.text);
 	}
 
-}, {"zip": 90066});
+}, {"zip": 94089});
 
 
 // Example #2 - Param binding + SSL

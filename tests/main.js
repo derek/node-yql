@@ -27,7 +27,7 @@ new yql.exec("SELECT * FROM html WHERE url = @url", function(response) {
         assert.ok(response.query.count); pass(testID);
     }
     catch (e) { return fail(testID, e); }
-}, {url:"http://www.github.com"}, {ssl:true});
+}, {url:"http://www.yahoo.com"}, {ssl:true});
 
 
 // Example #3 - Non-existent table
