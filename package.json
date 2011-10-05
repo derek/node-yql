@@ -1,6 +1,6 @@
 { "name"         : "yql"
-, "version"      : "0.4.5"
-, "engines"      : { ">=npm":"1.0.92", "node":">=v0.5.8" }
+, "version"      : "0.4.6"
+, "engines"      : { ">=npm":"1.0.92", "node":">=v0.4.5" }
 , "maintainers"  : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
 , "scripts"      : { "test": "test.js" }
 , "main"         : "./lib/yql"
@@ -12,4 +12,4 @@
 , "repository"   : {"type" : "git", "url" : "http://github.com/derek/node-yql.git" }
 , "bugs"         : { "mail" : "drg@yahoo-inc.com", "web": "https://github.com/derek/node-yql/issues" }
 , "licenses"     : [ { "type": "BSD", "url": "https://github.com/derek/node-yql/raw/master/LICENSE" } ]
-, "dependencies" : { "request" : ">=2.1.1" }}
+, "dependencies" : { "request" : ">=2.0.3" }}
