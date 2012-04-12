@@ -10,6 +10,6 @@
 , "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>" ]
 , "keywords"     : [ "yql" ]
 , "repository"   : {"type" : "git", "url" : "http://github.com/derek/node-yql.git" }
-, "bugs"         : { "mail" : "drg@yahoo-inc.com", "web": "https://github.com/derek/node-yql/issues" }
+, "bugs"         : { "mail" : "drg@yahoo-inc.com", "url": "https://github.com/derek/node-yql/issues" }
 , "licenses"     : [ { "type": "BSD", "url": "https://github.com/derek/node-yql/raw/master/LICENSE" } ]
 , "dependencies" : { "request" : ">=2.0.3" }}
