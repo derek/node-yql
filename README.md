@@ -1,7 +1,7 @@
 node-yql
 ========
 
-node-yql is a YQL client for NodeJS
+node-yql is a YQL client for node.js
 
 
 What is YQL?
