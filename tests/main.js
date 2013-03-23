@@ -8,53 +8,98 @@ All rights reserved.
 */
 
 var assert = require('assert'),
-    yql    = require('yql');
+    YQL    = require('../yql.js'),
+    query;
 
-// Example #1 - Param binding
-new yql.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(response) {
-    var testID = "1";
+// No YQL string
+try {
+    assert.throws(function () {
+        YQL(null);
+    }, /^Error: query must be a string$/);
+    pass(1);
+} catch (e) {
+    fail(1, e);
+}
+
+// Wrong options object
+try {
+    assert.throws(function () {
+        YQL("SHOW TABLES", null);
+    }, /^Error: options must be a object$/);
+    pass(2);
+} catch (e) {
+    fail(2, e);
+}
+
+// No param object
+try {
+    assert.throws(function () {
+        var query = YQL("SHOW TABLES");
+        query.exec(null);
+    }, /^Error: params must be a object$/);
+    pass(3);
+} catch (e) {
+    fail(3, e);
+}
+
+// No callback
+try {
+    assert.throws(function () {
+        var query = YQL("SHOW TABLES");
+        query.exec({}, null);
+    }, /^Error: callback must be a function$/);
+    pass(4);
+} catch (e) {
+    fail(4, e);
+}
+
+// Param binding
+query = YQL("SELECT * FROM weather.forecast WHERE (location = @zip)");
+query.exec({"zip": 90066}, function (error, results) {
     try {
-        assert.ok(response.query.results);
-        pass(testID);
+        assert.ifError(error);
+        assert.ok(results);
+        pass(5);
+    } catch(e) {
+        fail(5, e);
     }
-    catch (e) { return fail(testID, e); }
-}, {"zip": 90066});
-
-
-// Example #2 - Param binding + SSL
-new yql.exec("SELECT * FROM html WHERE url = @url", function(response) {
-    var testID = "2";
-    try {
-        assert.ok(response.query.count);
-        pass(testID);
-    }
-    catch (e) { return fail(testID, e); }
-}, {url:"http://www.yahoo.com"}, {ssl:true});
-
-
-// Example #3 - Non-existent table
-new yql.exec("SELECT * FROM foobar.badTable", function(response) {
-    var testID = "3";
-    try {
-        // response.error.description will only exist if YQL returns an error
-        assert.ok(response.error.description);
-        pass(testID);
-    }
-    catch (e) { return fail(testID, e); }
 });
 
-
-// Example #4 - Missing required fields
-new yql.exec("SELECT * FROM html", function(response) {
-    var testID = "4";
+// Param binding + SSL
+query = YQL("SELECT * FROM html WHERE url = @url", {ssl: true});
+query.exec({url:"http://www.yahoo.com"}, function (error, results) {
     try {
-        // response.error.description will only exist if YQL returns an error
-        assert.ok(response.error.description);
-        pass(testID);
+        assert.ifError(error);
+        assert.ok(results);
+        pass(6);
+    } catch(e) {
+        fail(6, e);
     }
-    catch (e) { return fail(testID, e); }
 });
 
+// Non-existent table
+query = YQL("SELECT * FROM foobar.badTable");
+query.exec({}, function (error, results) {
+    try {
+        assert.ok(error);
+        assert.equal(results, null);
+        pass(7);
+    } catch(e) {
+        fail(7, e);
+    }
+});
+
+// Missing required fields
+query = YQL("SELECT * FROM html");
+query.exec({}, function (error, results) {
+    try {
+        assert.ok(error);
+        assert.equal(results, null);
+        pass(8);
+    } catch(e) {
+        fail(8, e);
+    }
+});
 
 function pass(testID) {
     console.log("Test #" + testID + " ... Passed");
