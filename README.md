@@ -66,9 +66,9 @@ query = YQL(*string* __query__ [, *object* __options__])
 
 * query - A YQL query
 * options
-*   ssl: A boolean true/false flag to enable HTTPS (default: `false`)
-*   headers: Object of valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields) (default `{}`)
-*   env: Environment files (default: `http://datatables.org/alltables.env`)
+  * ssl: A boolean true/false flag to enable HTTPS (default: `false`)
+  * headers: Object of valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields) (default `{}`)
+  * env: Environment files (default: `http://datatables.org/alltables.env`)
 
 
 query.exec(*object* __params__, *function* __callback__)
