@@ -1,15 +1,14 @@
-{ "name"         : "yql"
-, "version"      : "0.4.8"
-, "engines"      : { ">=npm":"1.1.0-3", "node":">=v0.6.9" }
-, "maintainers"  : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
-, "scripts"      : { "test": "test.js" }
-, "main"         : "./lib/yql"
-, "directories"  : { "lib" : "./lib/" }
-, "description"  : "A YQL (Yahoo Query Language) client"
-, "url"          : "https://github.com/derek/node-yql"
-, "contributors" : [ "Michael Matuzak <matuzak@yahoo-inc.com>" ]
-, "keywords"     : [ "yql" ]
-, "repository"   : {"type" : "git", "url" : "http://github.com/derek/node-yql.git" }
-, "bugs"         : { "mail" : "drg@yahoo-inc.com", "url": "https://github.com/derek/node-yql/issues" }
-, "licenses"     : [ { "type": "BSD", "url": "https://github.com/derek/node-yql/raw/master/LICENSE" } ]
-, "dependencies" : { "request" : ">=2.9.201" }}
+{ "name"            : "yql"
+, "version"         : "1.0.0"
+, "engines"         : { ">=npm":"1.1.0-3", "node":">=v0.6.9" }
+, "maintainers"     : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
+, "scripts"         : { "test": "node test/mail.js" }
+, "main"            : "./yql.js"
+, "description"     : "A YQL (Yahoo Query Language) client"
+, "url"             : "https://github.com/derek/node-yql"
+, "contributors"    : [ "Michael Matuzak <matuzak@yahoo-inc.com>" ]
+, "keywords"        : [ "yql" ]
+, "repository"      : {"type" : "git", "url" : "http://github.com/derek/node-yql.git" }
+, "bugs"            : { "mail" : "drg@yahoo-inc.com", "url": "https://github.com/derek/node-yql/issues" }
+, "licenses"        : [ { "type": "BSD", "url": "https://github.com/derek/node-yql/raw/master/LICENSE" } ]
+, "dependencies"    : { "request" : "2.16.x" }}
