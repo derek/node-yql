@@ -43,24 +43,39 @@ Use within Node
 
 A basic example
 
-![](http://s89997654.onlinehome.us/screencaps/example.js-20110507-181302.jpg)
-![](http://s89997654.onlinehome.us/screencaps/Default-20100710-160425.jpg)
+```javascript
+var YQL = require('yql');
 
+YQL("SELECT * FROM weather.forecast WHERE (location = @zip)").exec({"zip": 94089}, function (error, results) {
+    if (error) throw error;
 
-YQL.exec()
-----------
+    var location  = results.channel.location,
+        condition = results.channel.item.condition;
+    console.log("The current weather in " + location.city + ', ' +
+                location.region + " is " + condition.temp + " degrees and " + condition.text);
+});
+```
 
-*yql.js* exports a single method, *exec*.
+```shell
+$ node example.js
+The current weather in Sunnyvale, CA is 47 degrees and Fair
+```
 
-function *exec* (*string* __query__ [, *function* __callback__] [, *object* __params__] [, *object* __httpOptions__])
+query = YQL(*string* __query__ [, *object* __options__])
+--------------------------------------------------------
 
 * query - A YQL query
-* callback - A callback function that receives the result of the query
-* params - Optional parameters for use within the YQL request querystring. Typical uses; including environment files, variable replacement within the YQL statement.
-* httpOptions - Additional HTTP options
-	* ssl: A boolean true/false flag to enable HTTPS (default: false)
-	* Any valid [HTTP header](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields)
+* options
+*   ssl: A boolean true/false flag to enable HTTPS (default: `false`)
+*   headers: Object of valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields) (default `{}`)
+*   env: Environment files (default: `http://datatables.org/alltables.env`)
 
+
+query.exec(*object* __params__, *function* __callback__)
+--------------------------------------------------------
+
+* params - Parameters for variable replacement within the YQL statement.
+* callback - A callback function that receives the result of the query
 
 Additional YQL Resources
 ------------------------
