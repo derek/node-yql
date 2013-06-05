@@ -1,0 +1,9 @@
+{
+    "name": "Node YQL",
+    "logo": "https://s.yimg.com/rt/assets/images/yql_logo_41x32-cf03860.png",
+    "version": "1.0.0",
+    "url": "https://github.com/derek/node-yql/",
+    "options": {
+        "outdir": "docs"
+    }
+}

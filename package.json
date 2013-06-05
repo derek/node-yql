@@ -1,14 +1,44 @@
-{ "name"            : "yql"
-, "version"         : "0.5.0"
-, "engines"         : { ">=npm":"1.1.0-3", "node":">=v0.6.9" }
-, "maintainers"     : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
-, "scripts"         : { "test": "node tests/index.js" }
-, "main"            : "./yql.js"
-, "description"     : "A YQL (Yahoo Query Language) client"
-, "url"             : "https://github.com/derek/node-yql"
-, "contributors"    : [ "Michael Matuzak <matuzak@yahoo-inc.com>",  "Andreas Madsen <amwebdk+github@gmail.com>" ]
-, "keywords"        : [ "yql" ]
-, "repository"      : {"type" : "git", "url" : "http://github.com/derek/node-yql.git" }
-, "bugs"            : { "mail" : "drg@yahoo-inc.com", "url": "https://github.com/derek/node-yql/issues" }
-, "licenses"        : [ { "type": "BSD", "url": "https://github.com/derek/node-yql/raw/master/LICENSE" } ]
-, "dependencies"    : { "request" : "2.16.x" }}
+{
+  "name": "yql",
+  "description": "A YQL (Yahoo Query Language) client",
+  "version": "0.5.0",
+  "author": "Derek Gathright <drgath@gmail.com>",
+  "homepage": "https://github.com/derek/node-yql",
+  "engines": {
+    "node": ">=0.8",
+    "npm": "1"
+  },
+  "main": "./yql.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- -R spec tests/index.js",
+    "docs": "yuidoc --outdir docs ./",
+    "clean": "rm -rf docs coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/derek/node-yql.git"
+  },
+  "bugs": {
+    "mail": "drgath@gmail.com",
+    "url": "https://github.com/derek/node-yql/issues"
+  },
+  "license": "BSD",
+  "dependencies": {
+    "request": "~2.34.0",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "istanbul": "~0.3.0",
+    "mocha-istanbul": "~0.2.0",
+    "mocha": "~1.21.3",
+    "sinon": "~1.10.3",
+    "yuidocjs": "~0.3.50"
+  },
+  "contributors": [
+    "Michael Matuzak <matuzak@yahoo-inc.com>",
+    "Andreas Madsen <amwebdk+github@gmail.com>"
+  ],
+  "keywords": [
+    "yql"
+  ]
+}

@@ -29,28 +29,29 @@ Installing node-yql
 	$ npm install yql
 
 
-Use within Node
+Examples
 ---------------
 
-A basic example
+	var YQL = require('yql');
+	var query = new YQL('SHOW TABLES');
+	query.exec(function (error, response) {
+		// Do something with results (response.query.results)
+	});
 
-```javascript
-var YQL = require('yql');
+Also, it is possible to chain the methods:
 
-YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)").exec({"zip": 94089}, function (error, results) {
-    if (error) throw error;
+	YQL('SELECT * FROM weather.forecast WHERE (location = @zip)').setParam('zip', 94089).setConfig('ssl', true).exec(fn)
 
-    var location  = results.channel.location,
-        condition = results.channel.item.condition;
-    console.log("The current weather in " + location.city + ', ' +
-                location.region + " is " + condition.temp + " degrees and " + condition.text);
-});
-```
+For backwards compatibility (<0.4.8), there's also the static `YQL.exec` method:
 
-```shell
-$ node example.js
-The current weather in Sunnyvale, CA is 47 degrees and Fair
-```
+	var YQL = require('yql');
+
+	YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function (results) {
+		// Do something with results
+	}, {"zip": 94089});
+
+	$ node example.js
+	The current weather in Sunnyvale, CA is 47 degrees and Fair
 
 query = YQL(*string* __query__ [, *object* __options__])
 --------------------------------------------------------
