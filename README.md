@@ -25,17 +25,8 @@ You may find more examples at the [YQL console](http://developer.yahoo.com/yql/c
 
 Installing node-yql
 -------------------
-First, make sure you have Node installed.  You can find instructions for installing it at <http://nodejs.org/#download>
-
-With Node installed, you can install the node-yql module 2 ways: 
-
-1) The easiest method is to use [NPM](http://github.com/isaacs/npm), node's package manager.  Once you have NPM installed, simply run:
 
 	$ npm install yql
-
-2) Or, you can clone the github repository, and just be sure you add this module's path to the $NODE_PATH env variable
-
-	$ git clone http://github.com/drgath/node-yql.git
 
 
 Use within Node
@@ -46,7 +37,7 @@ A basic example
 ```javascript
 var YQL = require('yql');
 
-YQL("SELECT * FROM weather.forecast WHERE (location = @zip)").exec({"zip": 94089}, function (error, results) {
+YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)").exec({"zip": 94089}, function (error, results) {
     if (error) throw error;
 
     var location  = results.channel.location,
