@@ -1,12 +1,12 @@
 { "name"            : "yql"
-, "version"         : "1.0.0"
+, "version"         : "0.5.0"
 , "engines"         : { ">=npm":"1.1.0-3", "node":">=v0.6.9" }
 , "maintainers"     : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
-, "scripts"         : { "test": "node test/mail.js" }
+, "scripts"         : { "test": "node tests/index.js" }
 , "main"            : "./yql.js"
 , "description"     : "A YQL (Yahoo Query Language) client"
 , "url"             : "https://github.com/derek/node-yql"
-, "contributors"    : [ "Michael Matuzak <matuzak@yahoo-inc.com>" ]
+, "contributors"    : [ "Michael Matuzak <matuzak@yahoo-inc.com>",  "Andreas Madsen <amwebdk+github@gmail.com>" ]
 , "keywords"        : [ "yql" ]
 , "repository"      : {"type" : "git", "url" : "http://github.com/derek/node-yql.git" }
 , "bugs"            : { "mail" : "drg@yahoo-inc.com", "url": "https://github.com/derek/node-yql/issues" }
