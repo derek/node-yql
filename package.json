@@ -2,7 +2,7 @@
 , "version"      : "0.4.8"
 , "engines"      : { ">=npm":"1.1.0-3", "node":">=v0.6.9" }
 , "maintainers"  : [ { "name": "Derek Gathright", "email": "drg@yahoo-inc.com" } ]
-, "scripts"      : { "test": "test.js" }
+, "scripts"      : { "test": "node tests/main.js" }
 , "main"         : "./lib/yql"
 , "directories"  : { "lib" : "./lib/" }
 , "description"  : "A YQL (Yahoo Query Language) client"

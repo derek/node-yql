@@ -8,7 +8,7 @@ All rights reserved.
 */
 
 var assert = require('assert'),
-    yql    = require('yql');
+    yql    = require('../lib/yql');
 
 // Example #1 - Param binding
 new yql.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function(response) {
@@ -54,6 +54,17 @@ new yql.exec("SELECT * FROM html", function(response) {
     }
     catch (e) { return fail(testID, e); }
 });
+
+// Example #5 - buildUrl
+(function() {
+    var testID = "5",
+        url = yql.buildUrl("SELECT * FROM weather.forecast WHERE (location = 93063)");
+    try {
+        assert.equal(url.href, 'http://query.yahooapis.com/v1/public/yql?env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json&q=SELECT%20*%20FROM%20weather.forecast%20WHERE%20(location%20%3D%2093063)&');
+        pass(testID);
+    }
+    catch (e) { return fail(testID, e); }
+}());
 
 
 function pass(testID) {
