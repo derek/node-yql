@@ -1,0 +1,374 @@
+{
+    "project": {
+        "name": "Node YQL",
+        "logo": "https://s.yimg.com/rt/assets/images/yql_logo_41x32-cf03860.png",
+        "version": "1.0.0",
+        "url": "https://github.com/derek/node-yql/",
+        "description": "A YQL (Yahoo Query Language) client"
+    },
+    "files": {
+        "yql.js": {
+            "name": "yql.js",
+            "modules": {
+                "YQL": 1
+            },
+            "classes": {
+                "YQL": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "YQL": {
+            "name": "YQL",
+            "submodules": {},
+            "classes": {
+                "YQL": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "yql.js",
+            "line": 14,
+            "description": "YQL constructor",
+            "example": [
+                "\n  `var query = new YQL('SHOW TABLES');`"
+            ],
+            "params": [
+                {
+                    "name": "query",
+                    "description": "A YQL query",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "A hash of configuration options",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "is_constructor": 1
+        }
+    },
+    "classes": {
+        "YQL": {
+            "name": "YQL",
+            "shortname": "YQL",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "YQL",
+            "namespace": "",
+            "file": "yql.js",
+            "line": 14,
+            "description": "YQL constructor",
+            "example": [
+                "\n  `var query = new YQL('SHOW TABLES');`"
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "yql.js",
+            "line": 38,
+            "description": "The YQL query string",
+            "itemtype": "property",
+            "name": "query",
+            "access": "public",
+            "tagname": "",
+            "type": "{String}",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 47,
+            "description": "A hash of values to replace in the query",
+            "itemtype": "property",
+            "name": "params",
+            "access": "public",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 56,
+            "description": "A hash of configuration options",
+            "itemtype": "property",
+            "name": "config",
+            "access": "public",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 66,
+            "description": "Sets a variable value for use in the YQL query",
+            "example": [
+                "\n  `query.setParam('name', 'derek');`"
+            ],
+            "itemtype": "method",
+            "name": "setParam",
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "This instance",
+                "type": "Object"
+            },
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 84,
+            "description": "Sets an array of variable values for use in the YQL query",
+            "example": [
+                "\n  ```\n  query.setParams({\n    city: 'San Francisco',\n    state: 'CA'\n  });\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "setParams",
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "This instance",
+                "type": "Object"
+            },
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 106,
+            "description": "Sets a YQL option",
+            "example": [
+                "\n  `query.setOption('ssl', true);`"
+            ],
+            "itemtype": "method",
+            "name": "setOption",
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "This instance",
+                "type": "Object"
+            },
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 124,
+            "description": "Sets a batch of YQL options",
+            "example": [
+                "\n  ```\n  query.setOptions({\n    env: 'http://example.com/path/to/my.env',\n    headers: {'User-Agent': 'request'},\n    ssl: true\n  });\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "setOptions",
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "This instance",
+                "type": "Object"
+            },
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 147,
+            "description": "Gets the URL object of the HTTP request",
+            "example": [
+                "\n  ```\n  var url = query.getURL()\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "getURL",
+            "access": "public",
+            "tagname": "",
+            "return": {
+                "description": "URL",
+                "type": "String"
+            },
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 179,
+            "description": "Executes the query",
+            "example": [
+                "\n  ```\n  var query = new YQL(yqlQuery);\n  query.exec(callbackFn)\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "exec",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "A function to be executed with arguments `(error, response)`.",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 204,
+            "description": "Executes an HTTP request (via Request).",
+            "itemtype": "method",
+            "name": "_httpRequest",
+            "access": "private",
+            "tagname": "",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 214,
+            "description": "The YQL#exec response handler",
+            "itemtype": "method",
+            "name": "_handleResponse",
+            "access": "private",
+            "tagname": "",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 250,
+            "description": "The original API, for backwards compatibility",
+            "itemtype": "method",
+            "name": "exec",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "deprecated": true,
+            "params": [
+                {
+                    "name": "query",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "callback",
+                    "description": "Arguments: `(response)`",
+                    "type": "Object"
+                }
+            ],
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 272,
+            "description": "A default configuration object",
+            "itemtype": "property",
+            "name": "DEFAULT_CONFIG",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "type": "{Object}",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 290,
+            "description": "A hash of error messages",
+            "itemtype": "property",
+            "name": "ERROR",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "type": "{Object}",
+            "class": "YQL",
+            "module": "YQL"
+        },
+        {
+            "file": "yql.js",
+            "line": 308,
+            "description": "Gracefully parse JSON",
+            "itemtype": "method",
+            "name": "parseJSON",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "YQL",
+            "module": "YQL"
+        }
+    ],
+    "warnings": []
+}
