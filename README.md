@@ -1,11 +1,9 @@
-node-yql
-========
+# node-yql
 
 node-yql is a YQL client for node.js
 
 
-What is YQL?
-------------
+## What is YQL?
 
 Yahoo! Query Language is an expressive SQL-like language that lets you query, filter, and join data across Web services. With YQL, apps run faster with fewer lines of code and a smaller network footprint.
 
@@ -23,14 +21,12 @@ With YQL, developers can access and shape data across the Internet through one s
 You may find more examples at the [YQL console](http://developer.yahoo.com/yql/console/ "YQL console")
 
 
-Installing node-yql
--------------------
+## Installing node-yql
 
-	$ npm install yql
+    $ npm install yql
 
 
-Examples
----------------
+## Example
 
 	var YQL = require('yql');
 	var query = new YQL('SHOW TABLES');
@@ -38,39 +34,24 @@ Examples
 		// Do something with results (response.query.results)
 	});
 
-Also, it is possible to chain the methods:
+You can also chain the methods:
 
 	YQL('SELECT * FROM weather.forecast WHERE (location = @zip)').setParam('zip', 94089).setConfig('ssl', true).exec(fn)
 
-For backwards compatibility (<0.4.8), there's also the static `YQL.exec` method:
-
-	var YQL = require('yql');
-
-	YQL.exec("SELECT * FROM weather.forecast WHERE (location = @zip)", function (results) {
-		// Do something with results
-	}, {"zip": 94089});
-
-	$ node example.js
-	The current weather in Sunnyvale, CA is 47 degrees and Fair
-
-query = YQL(*string* __query__ [, *object* __options__])
---------------------------------------------------------
-
-* query - A YQL query
-* options
-  * ssl: A boolean true/false flag to enable HTTPS (default: `false`)
-  * headers: Object of valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields) (default `{}`)
-  * env: Environment files (default: `http://datatables.org/alltables.env`)
+## Documentation
+Full documentation can be found at [derek.github.com/node-yql](http://derek.github.com/node-yql)
 
 
-query.exec(*object* __params__, *function* __callback__)
---------------------------------------------------------
+function *YQL* (*string* __query__ [, *object* __options__])
 
-* params - Parameters for variable replacement within the YQL statement.
-* callback - A callback function that receives the result of the query
+* `query` - A YQL query
+* `options`
+    * `ssl`: A boolean true/false flag to enable HTTPS (default: `false`)
+    * `headers`: Object of valid [HTTP headers](https://secure.wikimedia.org/wikipedia/en/wiki/List_of_HTTP_header_fields) (default `{}`)
+    * `env`: Environment files (default: `http://datatables.org/alltables.env`)
 
-Additional YQL Resources
-------------------------
+
+## Additional YQL Resources
 
 * Documentation: <http://developer.yahoo.com/yql/guide/>
 * YQL Console: <http://developer.yahoo.com/yql/console/>
