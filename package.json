@@ -1,7 +1,7 @@
 {
   "name": "yql",
   "description": "A YQL (Yahoo Query Language) client",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "author": "Derek Gathright <drgath@gmail.com>",
   "homepage": "https://github.com/derek/node-yql",
   "engines": {
