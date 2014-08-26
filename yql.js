@@ -267,7 +267,7 @@ YQL.exec = function (query, callback, params, config) {
         throw new Error(YQL.ERROR.invalidParameter + ': query')
     }
 
-    return YQL(query).setParams(params).setConfig(config).exec(function (error, results) {
+    return YQL(query).setParams(params).setConfigs(config).exec(function (error, results) {
         if (error) {
             results = results || {};
             results.error = results.error || {};
