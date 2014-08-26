@@ -268,6 +268,11 @@ YQL.exec = function (query, callback, params, config) {
     }
 
     return YQL(query).setParams(params).setConfig(config).exec(function (error, results) {
+        if (error) {
+            results = results || {};
+            results.error = results.error || {};
+            results.error.description = error.code;
+        }
         callback(results)
     });
 };
