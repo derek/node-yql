@@ -129,7 +129,8 @@ YQL.prototype.setConfig = function (key, value) {
  *   query.setOptions({
  *     env: 'http://example.com/path/to/my.env',
  *     headers: {'User-Agent': 'request'},
- *     ssl: true
+ *     ssl: true,
+ *     timout: 500
  *   });
  *   ```
  *
@@ -193,8 +194,10 @@ YQL.prototype.exec = function (callback) {
     var config = {
         headers: this.config.headers,
         method: 'GET',
+        timeout: parseInt(this.config.timeout, 10),
         url: url
     };
+
     var handler = this._handleResponse.bind(this, callback);
 
     // Execute the YQL request
@@ -284,7 +287,8 @@ YQL.DEFAULT_CONFIG = {
     },
     env: 'http://datatables.org/alltables.env',
     headers: {},
-    ssl: false
+    ssl: false,
+    timeout: 0 // 0 = No timeout
 };
 
 /**
