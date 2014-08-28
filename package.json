@@ -28,6 +28,7 @@
     "underscore": "~1.6.0"
   },
   "devDependencies": {
+    "expect.js": "~0.3.1",
     "istanbul": "~0.3.0",
     "mocha-istanbul": "~0.2.0",
     "mocha": "~1.21.3",
