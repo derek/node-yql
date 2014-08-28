@@ -1,7 +1,8 @@
+![build status](https://travis-ci.org/derek/node-yql.svg?branch=master)
+
 # node-yql
 
 node-yql is a YQL client for node.js
-
 
 ## What is YQL?
 
