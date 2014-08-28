@@ -7,7 +7,7 @@ All rights reserved.
 
 */
 
-var YQL = require('yql');
+var YQL = require('../yql');
 var sinon = require('sinon');
 var expect = require('expect.js');
 
