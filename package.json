@@ -24,7 +24,7 @@
   },
   "license": "BSD",
   "dependencies": {
-    "request": "~2.34.0",
+    "request": "~2.51.0",
     "underscore": "~1.6.0"
   },
   "devDependencies": {
