@@ -195,7 +195,8 @@ YQL.prototype.exec = function (callback) {
         headers: this.config.headers,
         method: 'GET',
         timeout: parseInt(this.config.timeout, 10),
-        url: url
+        url: url,
+        withCredentials: false, // needed for CORS
     };
 
     var handler = this._handleResponse.bind(this, callback);
